@@ -201,7 +201,7 @@ export function Sidebar({ className }: { className?: string }) {
 
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger asChild>
-          <Button variant="ghost" size="sm" className="lg:hidden p-2">
+          <Button variant="ghost" size="sm" className="lg:hidden p-2 absolute">
             <Menu className="h-5 w-5" />
           </Button>
         </SheetTrigger>
