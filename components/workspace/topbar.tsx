@@ -142,8 +142,8 @@ export function Topbar() {
         </Button>
       </div>
 
-      <VeltCommentsSidebar darkMode={theme === "dark"} />
       <div className="flex items-center gap-2 lg:gap-3">
+        <VeltCommentsSidebar darkMode={theme === "dark"} />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button
