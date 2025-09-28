@@ -1,36 +1,154 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Coda.io Velt Example (Next.js)
+
+An Coda clone built with Next.js, Tailwind CSS, Radix UI and [Velt](https://velt.dev), demonstrating real-time commenting and multi-user collaboration for modern SaaS applications.
+
+---
+
+## Features
+
+- 🧑‍🤝‍🧑 **Multi-User Support**: Switch between predefined users with avatars.
+- 💬 **Real-Time Comments**: Add and view collaborative comments using Velt.
+- 🌓 **Dark/Light Theme**: Toggle between dark and light modes.
+- 📊 **Sidebar & Metrics**: Sidebar for navigation and info cards for journey/metrics.
+- 🔔 **Notifications**: In-app notifications powered by Velt.
+- 🧩 **Reusable UI Components**: Built with shadcn/ui and Radix primitives.
+
+---
+
+## Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **UI**: [React](https://react.dev/), [Tailwind CSS](https://tailwindcss.com/), [shadcn/ui](https://ui.shadcn.com/)
+- **Editor**: [Tiptap](https://tiptap.dev/)
+- **Collaboration**: [Velt](https://velt.dev/)
+- **State Management**: [Zustand](https://zustand-demo.pmnd.rs/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Other**: [Radix UI](https://www.radix-ui.com/)
+
+---
+
+## Prerequisites
+
+- **Node.js** (v16+ recommended)
+- **npm** (v8+ recommended)
+
+---
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+   ```bash
+   git clone https://github.com/Studio1HQ/Velt-Examples
+   ```
+
+2. Navigate to the `coda` directory
+
+   ```bash
+   cd coda
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   pnpm install
+   ```
+
+4. Create a `.env.local` file with your Velt API key:
+
+   ```
+   NEXT_PUBLIC_VELT_ID=your_api_key_here
+   ```
+
+   > Note: You can get your API key from the [Velt Dashboard](https://app.velt.dev)
+
+5. Run the development server:
+
+   ```bash
+   pnpm run dev
+   ```
+
+6. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+## Project Structure
+
+```
+coda.io-velt/
+├── app/                 # Next.js app directory
+├── components/          # React components
+│   ├── hooks/           # theme provider
+│   └── ui/              # UI components from shadCn
+│   └── workspace/       # components for the Coda UI
+├── helper/              # Users DB
+├── lib/                 # Utility functions , types and constant data.ts         # Hard Coded table data
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Velt Integration
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project uses Velt SDK v4.5.0-beta.14 for real-time collaboration features:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Core Features
 
-## Learn More
+- User presence and cursor tracking
+- Comments and annotations
+- Notifications
+- Real-time updates
 
-To learn more about Next.js, take a look at the following resources:
+### Velt Components Used
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `VeltProvider`: Main provider component for Velt integration
+- `VeltComments`: Inline commenting system
+- `VeltNotificationsTool`: Notification system
+- `VeltCommentsSidebar`: Comments management sidebar
+- `VeltPresence`: To show active user
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Configuration
 
-## Deploy on Vercel
+The application uses the following Velt configurations:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Document ID: "coda-inventory"
+- User authentication with predefined users
+- Custom comment bubble styling
+- Dark/Light mode support
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Troubleshooting
+
+### Common Issues
+
+1. **Velt API Key Issues**
+
+   - Ensure your API key is correctly set in `.env.local`
+   - Verify the key is active in your Velt Dashboard
+
+2. **Collaboration Features Not Working**
+
+   - Check browser console for errors
+   - Verify network connectivity
+   - Ensure you're using a supported browser
+
+3. **Build Issues**
+   - Clear `.next` directory and node_modules
+   - Run `pnpm install` again
+   - Check Node.js version compatibility
+
+## Documentation
+
+### Velt Resources
+
+- [Velt Documentation](https://docs.velt.dev/getting-started/introduction)
+- [Velt API Reference](https://docs.velt.dev/api-reference)
+- [Velt Dashboard](https://app.velt.dev)
+- [Velt GitHub](https://github.com/veltdev)
+
+### UI Components
+
+- [Shadcn UI Documentation](https://ui.shadcn.com/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+
+## Contributing
+
+Feel free to submit issues and enhancement requests. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
