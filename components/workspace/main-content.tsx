@@ -25,7 +25,7 @@ export function MainContent() {
           <h1 className="text-xl lg:text-2xl font-semibold text-foreground">
             Workspace settings
           </h1>
-          <Button className="bg-primary text-primary-foreground hover:bg-primary/90 w-full sm:w-auto">
+          <Button variant={"outline"}>
             <Plus className="h-4 w-4 mr-2" />
             Invite
           </Button>
