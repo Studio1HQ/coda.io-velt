@@ -274,7 +274,7 @@ export default function CodoTable() {
                   <TableCell className="!p-0 border">
                     <div
                       id={`velt-comments-${member.name}+${member.email}+${member.id}+${index}`}
-                      className="flex items-center justify-between gap-2 pl-2 !py-2"
+                      className="group flex items-center justify-between gap-2 pl-2 !py-2"
                     >
                       <div className="flex items-center">
                         <Avatar className="h-8 w-8 mr-3">
@@ -295,11 +295,13 @@ export default function CodoTable() {
                           </div>
                         </div>
                       </div>
-                      <VeltCommentTool
-                        targetElementId={`velt-comments-${member.name}+${member.email}+${member.id}+${index}`}
-                        style={{ width: 18, height: 18 }}
-                        darkMode={theme === "dark"}
-                      />
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+                        <VeltCommentTool
+                          targetElementId={`velt-comments-${member.name}+${member.email}+${member.id}+${index}`}
+                          style={{ width: 18, height: 18 }}
+                          darkMode={theme === "dark"}
+                        />
+                      </div>
                     </div>
                   </TableCell>
 
@@ -307,9 +309,9 @@ export default function CodoTable() {
                   <TableCell className="!p-0 border">
                     <div
                       id={`velt-comments-${member.lastActive}+${member.id}+${index}`}
-                      className="flex items-center justify-between gap-2 pl-2"
+                      className="group flex items-center justify-between gap-2 pl-2"
                     >
-                      <div>
+                      <div className="my-[10px]">
                         <div className="text-sm text-foreground">
                           Activity Status:{" "}
                         </div>
@@ -317,14 +319,13 @@ export default function CodoTable() {
                           {member.lastActive}
                         </div>
                       </div>
-                      <div>
-                        <div className="text-sm text-foreground"></div>
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+                        <VeltCommentTool
+                          targetElementId={`velt-comments-${member.lastActive}+${member.id}+${index}`}
+                          style={{ width: 18, height: 18 }}
+                          darkMode={theme === "dark"}
+                        />
                       </div>
-                      <VeltCommentTool
-                        targetElementId={`velt-comments-${member.lastActive}+${member.id}+${index}`}
-                        style={{ width: 18, height: 18 }}
-                        darkMode={theme === "dark"}
-                      />
                     </div>
                   </TableCell>
 
@@ -332,19 +333,21 @@ export default function CodoTable() {
                   <TableCell className="!p-0 border">
                     <div
                       id={`velt-comments-${member.docsOwned}+${member.id}+${index}`}
-                      className="flex items-center justify-between gap-2 pl-2 !py-2"
+                      className="group flex items-center justify-between gap-2 pl-2 !py-2"
                     >
-                      <div>
-                        <div className="text-sm text-foreground">Joined At</div>
+                      <div className="my-[2px]">
+                        <div className="text-sm text-foreground">Documents:</div>
                         <div className="text-xs text-purple-600 dark:text-orange-400">
                           {member.docsOwned} docs
                         </div>
                       </div>
-                      <VeltCommentTool
-                        targetElementId={`velt-comments-${member.docsOwned}+${member.id}+${index}`}
-                        style={{ width: 18, height: 18 }}
-                        darkMode={theme === "dark"}
-                      />
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+                        <VeltCommentTool
+                          targetElementId={`velt-comments-${member.docsOwned}+${member.id}+${index}`}
+                          style={{ width: 18, height: 18 }}
+                          darkMode={theme === "dark"}
+                        />
+                      </div>
                     </div>
                   </TableCell>
 
@@ -352,9 +355,9 @@ export default function CodoTable() {
                   <TableCell className="!p-0 border">
                     <div
                       id={`velt-comments-${member.joinedOn}+${member.id}+${index}`}
-                      className="flex items-center justify-between gap-2 pl-2 !py-2"
+                      className="group flex items-center justify-between gap-2 pl-2 !py-2"
                     >
-                      <div>
+                      <div className="my-[2px]">
                         <div className="text-sm text-foreground">
                           Joined At{" "}
                         </div>
@@ -362,11 +365,13 @@ export default function CodoTable() {
                           {member.joinedOn}
                         </div>
                       </div>
-                      <VeltCommentTool
-                        targetElementId={`velt-comments-${member.joinedOn}+${member.id}+${index}`}
-                        style={{ width: 18, height: 18 }}
-                        darkMode={theme === "dark"}
-                      />
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+                        <VeltCommentTool
+                          targetElementId={`velt-comments-${member.joinedOn}+${member.id}+${index}`}
+                          style={{ width: 18, height: 18 }}
+                          darkMode={theme === "dark"}
+                        />
+                      </div>
                     </div>
                   </TableCell>
 
@@ -374,9 +379,9 @@ export default function CodoTable() {
                   <TableCell className="!p-0 border">
                     <div
                       id={`velt-comments-${member.role}+${member.id}+${index}`}
-                      className="flex items-center justify-between gap-2 pl-2 !py-2"
+                      className="group flex items-center justify-between gap-2 pl-2 !py-2"
                     >
-                      <div>
+                      <div className="my-[2px]">
                         <div className="text-sm text-foreground">
                           {member.role}
                         </div>
@@ -390,11 +395,13 @@ export default function CodoTable() {
                           </div>
                         )}
                       </div>
-                      <VeltCommentTool
-                        targetElementId={`velt-comments-${member.role}+${member.id}+${index}`}
-                        style={{ width: 18, height: 18 }}
-                        darkMode={theme === "dark"}
-                      />
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+                        <VeltCommentTool
+                          targetElementId={`velt-comments-${member.role}+${member.id}+${index}`}
+                          style={{ width: 18, height: 18 }}
+                          darkMode={theme === "dark"}
+                        />
+                      </div>
                     </div>
                   </TableCell>
                 </TableRow>
